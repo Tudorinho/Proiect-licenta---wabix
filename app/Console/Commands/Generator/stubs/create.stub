@@ -1,0 +1,43 @@
+@extends('layouts.master')
+
+@section('title')
+    @lang('translation.#translationKeyName.#translationsAdd')
+@endsection
+
+@section('css')
+@endsection
+
+@section('content')
+    @component('components.breadcrumb')
+        @slot('li_1')
+            <a href="{{ route('#routesPrefix.index') }}">@lang('translation.#translationKeyName.#translationsPlural')</a>
+        @endslot
+        @slot('title')
+            @lang('translation.#translationKeyName.#translationsAdd')
+        @endslot
+    @endcomponent
+
+    <div class="row">
+        <div class="col-12">
+            @if($errors->any())
+               <div class="col-12 alert alert-danger">
+                   {!! implode('', $errors->all('<div>:message</div>')) !!}
+               </div>
+            @endif
+            <div class="card">
+                <div class="card-body">
+                    <form action="{{ route('#routesPrefix.store') }}" method="POST">
+                        {{ csrf_field() }}
+#formContent
+                        <div class="mt-3">
+                            <button type="submit" class="btn btn-primary w-md">@lang('translation.buttons.submit')</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('script')
+@endsection

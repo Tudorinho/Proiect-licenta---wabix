@@ -1,0 +1,20 @@
+                            <div class="col-#width #marginTop">
+                                <label class="form-label">@lang('translation.fields.#fieldTranslationKey')</label>
+                                <select class="form-control" name="#fieldName" id="#fieldName_dropdown">
+                                    @foreach($#models as $value)
+                                        <option value="{{ $value }}" {{ (old('#fieldName') == $value || (isset($model) && $model->#fieldName == $value)) ? 'selected' : '' }}>{{ $value }}</option>
+                                    @endforeach
+                                </select>
+                                @if($errors->has('#fieldName'))
+                                    <div class="invalid-feedback">{{ $errors->first('#fieldName') }}</div>
+                                @endif
+                            </div>
+                            @push('scripts')
+                                <script>
+                                    $(function() {
+                                        $('##fieldName_dropdown').select2({
+                                            placeholder: 'Select an option'
+                                        });
+                                    });
+                                </script>
+                            @endpush

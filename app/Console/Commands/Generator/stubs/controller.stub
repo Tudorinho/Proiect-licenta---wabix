@@ -1,0 +1,107 @@
+<?php
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use DataTables;
+use App\Events\AfterCreate;
+use App\Events\AfterUpdate;
+use App\Events\BeforeCreate;
+use App\Events\BeforeUpdate;
+use App\Validators\BeforeValidate#modelName;
+use App\Models\#modelName;
+#dependencyModels
+
+class #controllerName extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index(Request $request)
+    {
+        $data = #modelName::get();
+
+        if ($request->ajax()) {
+            return Datatables::of($data)
+#columns
+                ->make(true);
+        }
+
+        return view('#routesPrefix.index', compact('data'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+#createVariables
+#createReturn
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+#storeValidator
+
+        $validator = BeforeValidate#modelName::run($validator, $request, Auth::user());
+
+        if ($validator->fails()) {
+            return redirect(route('#routesPrefix.create'))->withInput()->withErrors($validator->errors());
+        }
+
+        event(new BeforeCreate('#modelName', $request, Auth::user()));
+        $model = #modelName::create($request->all());
+        event(new AfterCreate('#modelName', $request, Auth::user(), $model));
+
+        return redirect(route('#routesPrefix.index'))->with('success', trans('translation.#translationKeyName.store'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit($id)
+    {
+#updateVariables
+        $model = #modelName::find($id);
+
+#updateReturn
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, $id)
+    {
+        $model = #modelName::find($id);
+        $originalModelAttributes = $model->getAttributes();
+
+#updateValidator
+
+        $validator = BeforeValidate#modelName::run($validator, $request, Auth::user(), $model);
+
+        if ($validator->fails()) {
+            return redirect(route('#routesPrefix.edit', ['id' => $id]))->withInput()->withErrors($validator->errors());
+        }
+
+        event(new BeforeUpdate('#modelName', $request, Auth::user(), $model));
+        $model->update($request->all());
+        event(new AfterUpdate('#modelName', $request, Auth::user(), $model, $originalModelAttributes));
+
+        return redirect(route('#routesPrefix.index'))->with('success', trans('translation.#translationKeyName.update'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy($id)
+    {
+        $model = #modelName::find($id);
+        $model->delete();
+
+        return redirect(route('#routesPrefix.index'))->with('success', trans('translation.#translationKeyName.destroy'));
+    }
+}
