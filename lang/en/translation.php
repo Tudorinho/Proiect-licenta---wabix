@@ -281,6 +281,7 @@ return [
     ],
     "user" => [
         "users" => "Users",
+        "currencies" => "Currencies",
         "editUser" => "Edit User",
         "addUser" => "Add User",
         "store" => "User successfully created",
