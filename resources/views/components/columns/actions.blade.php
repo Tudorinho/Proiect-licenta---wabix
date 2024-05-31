@@ -18,9 +18,9 @@
     <a href="{{ route('human-resources.generate-pdf-hr', ['id' => $row->id]) }}" type="button" class="btn btn-success btn-sm waves-effect waves-light">
         <i class="fa fa-download"></i>
     </a>
-    <a href="{{ route('human-resources.pdf-blade', ['id' => $row->id]) }}" type="button" class="btn btn-success btn-sm waves-effect waves-light">
+    {{-- <a href="{{ route('human-resources.pdf-blade', ['id' => $row->id]) }}" type="button" class="btn btn-success btn-sm waves-effect waves-light">
         pdf
-    </a>
+    </a> --}}
 @endif
 
 

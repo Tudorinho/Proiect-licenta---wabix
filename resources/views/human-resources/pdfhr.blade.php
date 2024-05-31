@@ -142,33 +142,29 @@
     @foreach($humanResource->details as $detail)
         @if($detail->is_academic)
             @if($academicCounter == 1)
+                </ul>
+                </div>
                 <div class="section">
                     <h2>ACADEMIC INFORMATION</h2>
                     <ul class="project-list">
             @endif
-            <table style="width: 100%;">
-                <tr>
-                    <td style="width: 50%;">
-                        <h3 class="detail-counter">{{ $academicCounter }}) {{ $detail->name }}</h3>
-                        <p><strong>Start:</strong> {{ $detail->start }}</p>
-                        <p><strong>End:</strong> {{ $detail->end }}</p>
-                        <p><strong>Type:</strong> {{ $detail->type }}</p>
-                    </td>
-                    <td style="width: 50%;">
-                        <h4 class="projects-title">Projects:</h4>
-                        <ul class="project-list">
-                            @foreach($detail->projects as $project)
-                                <li class="project">
-                                    {{-- <span class="project-counter">{{ $loop->iteration }})</span> --}}
-                                    <p class="project-info"> <strong>Project {{ $loop->iteration }} - {{ $project->name }} </strong> </p>
-                                    <p class="project-info2 description"><strong>Description:</strong> {{ $project->description }}</p>
-                                    <p class="project-info2"><strong>Technologies:</strong> {{ implode(', ', json_decode($project->technologies)) }}</p>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </td>
-                </tr>
-            </table>
+        <li>
+            <h3 class="detail-counter">{{ $academicCounter }}) {{ $detail->name }}</h3>
+            <p><strong>Start:</strong> {{ $detail->start }}</p>
+            <p><strong>End:</strong> {{ $detail->end }}</p>
+            <p><strong>Type:</strong> {{ $detail->type }}</p>
+            <h4 class="projects-title">Projects:</h4>
+            <ul class="project-list">
+                @foreach($detail->projects as $project)
+                    <li class="project">
+                        {{-- <span class="project-counter">{{ $loop->iteration }})</span> --}}
+                        <p class="project-info"> <strong>Project {{ $loop->iteration }} - {{ $project->name }} </strong> </p>
+                        <p class="project-info2 description"><strong>Description:</strong> {{ $project->description }}</p>
+                        <p class="project-info2"><strong>Technologies:</strong> {{ implode(', ', json_decode($project->technologies)) }}</p>
+                    </li>
+                @endforeach
+            </ul>
+        </li>
             @php $academicCounter++; @endphp
         @else
             @if($professionalCounter == 1)
