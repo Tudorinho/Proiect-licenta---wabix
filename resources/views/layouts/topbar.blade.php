@@ -89,15 +89,12 @@
                                 <span>Events</span>
                             </a>
                         </div>
-                        <div class="col">
+                        {{-- <div class="col">
                             <a class="dropdown-icon-item" href="{{ route('deals.board') }}">
                                 <i class="fas fa-cash-register" style="font-size: 20px"></i>
                                 <span>Deals</span>
                             </a>
-                        </div>
-                    </div>
-
-                    <div class="row g-0">
+                        </div> --}}
                         <div class="col">
                             <a class="dropdown-icon-item" href="{{ route('document-folders.index') }}">
                                 <i class="fas fa-folder" style="font-size: 20px"></i>
@@ -105,6 +102,15 @@
                             </a>
                         </div>
                     </div>
+
+                    {{-- <div class="row g-0">
+                        <div class="col">
+                            <a class="dropdown-icon-item" href="{{ route('document-folders.index') }}">
+                                <i class="fas fa-folder" style="font-size: 20px"></i>
+                                <span>Documents</span>
+                            </a>
+                        </div>
+                    </div> --}}
 
                 </div>
             </div>
