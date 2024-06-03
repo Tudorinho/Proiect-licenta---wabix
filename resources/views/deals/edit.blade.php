@@ -13,7 +13,7 @@
             <a href="{{ route('deals.index') }}">@lang('translation.deal.deals')</a>
         @endslot
         @slot('title')
-            @lang('translation.deal.addDeal')
+            @lang('translation.deal.editDeal')
         @endslot
     @endcomponent
     <div class="row">
