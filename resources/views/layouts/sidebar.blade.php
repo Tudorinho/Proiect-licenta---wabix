@@ -112,7 +112,7 @@
                     </ul>
                 </li>
 
-                {{-- <li>
+                <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-home-circle"></i>
                         <span>@lang('translation.menu.crm')</span>
@@ -140,7 +140,7 @@
                             <a href="{{ route('deals-notes.index') }}" key="t-default">@lang('translation.menu.dealsNotes')</a>
                         </li>
                     </ul>
-                </li> --}}
+                </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
