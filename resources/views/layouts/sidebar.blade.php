@@ -25,9 +25,9 @@
                         <li class="{{  Request::segment(1) == 'currencies' ? 'mm-active' : '' }}">
                             <a href="{{ route('currencies.index') }}" key="t-default">@lang('translation.menu.currencies')</a>
                         </li>
-                        <li class="{{  Request::segment(1) == 'permissions' ? 'mm-active' : '' }}">
+                        {{-- <li class="{{  Request::segment(1) == 'permissions' ? 'mm-active' : '' }}">
                             <a href="{{ route('home.permissions') }}" key="t-default">@lang('translation.menu.permissions')</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
                 <li>
@@ -106,9 +106,9 @@
                         <li class="{{  (Request::segment(1) == 'tasks' && Request::segment(2) != 'list') ? 'mm-active' : '' }}">
                             <a href="{{ route('tasks.index') }}" key="t-default">@lang('translation.menu.tasks')</a>
                         </li>
-                        <li class="{{  Request::segment(1) == 'tasks-statuses-changes' ? 'mm-active' : '' }}">
+                        {{-- <li class="{{  Request::segment(1) == 'tasks-statuses-changes' ? 'mm-active' : '' }}">
                             <a href="{{ route('tasks-statuses-changes.index') }}" key="t-default">@lang('translation.menu.tasksStatusesChanges')</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
 

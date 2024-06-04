@@ -68,20 +68,16 @@
                         <!-- Add Detail Academic Button -->
                         <button type="button" class="btn btn-success waves-effect waves-light mt-2" id="add-detail-academic">+</button>
 
-                        {{-- <div class="projects-container" id="projects-container2"></div> --}}
 
                         <h5 class="mt-3">Professional Information</h5>
-                        <div class="row">
-                            <div class="col">
-                                <div id="details-container-professional">
-                                    <!-- Aici vor fi adăugate dinamic blocurile de câmpuri pentru detalii -->
-                                </div>
-                            </div>
-                            <!-- Add Detail Professional Button -->
-                            <div class="col-auto text-end">
-                                <button type="button" class="btn btn-success waves-effect waves-light" id="add-detail-professional">+</button>
-                            </div>
+
+                        <div id="details-container-professional">
+                             <!-- Aici vor fi adăugate dinamic blocurile de câmpuri pentru detalii -->
                         </div>
+
+                        <!-- Add Detail Academic Button -->
+                        <button type="button" class="btn btn-success waves-effect waves-light mt-2" id="add-detail-professional">+</button>
+
 
                         <div class="mt-3">
                             <button type="submit" class="btn btn-primary w-md">@lang('translation.buttons.submit')</button>
