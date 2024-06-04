@@ -25,12 +25,12 @@
         </div>
     </div>
 
-    <table class="table table-bordered smart-datatable" id="smart-datatable">
+    <table class="table table-bordered smart-datatable overflow-x-scroll" id="smart-datatable">
         <thead>
         <tr>
 			<th>@lang('translation.fields.no')</th>
 			<th>@lang('translation.fields.title')</th>
-			<th>@lang('translation.fields.description')</th>
+			{{-- <th>@lang('translation.fields.description')</th> --}}
 			<th>@lang('translation.fields.status')</th>
 			<th>@lang('translation.fields.priority')</th>
 			<th>@lang('translation.fields.dueDate')</th>
@@ -40,7 +40,7 @@
 			<th>@lang('translation.fields.action')</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody class="overflow-x-scroll">
         </tbody>
     </table>
 @endsection
@@ -66,10 +66,6 @@
 					{
 						data: 'title',
 						name: 'title',
-					},
-					{
-						data: 'description',
-						name: 'description',
 					},
 					{
 						data: 'status',

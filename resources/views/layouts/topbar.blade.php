@@ -19,12 +19,12 @@
             </button>
 
            <!-- App Search-->
-           <form class="app-search d-none d-lg-block">
+           {{-- <form class="app-search d-none d-lg-block">
             <div class="position-relative">
                 <input type="text" class="form-control" placeholder="@lang('translation.header.search')">
                 <span class="bx bx-search-alt"></span>
             </div>
-        </form>
+        </form> --}}
     </div>
 
     <div class="d-flex">
