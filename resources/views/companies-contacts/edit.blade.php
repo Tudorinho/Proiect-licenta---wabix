@@ -13,7 +13,7 @@
             <a href="{{ route('companies-contacts.index') }}">@lang('translation.companyContact.companiesContacts')</a>
         @endslot
         @slot('title')
-            @lang('translation.companyContact.addCompanyContact')
+            @lang('translation.companyContact.editCompanyContact')
         @endslot
     @endcomponent
     <div class="row">
