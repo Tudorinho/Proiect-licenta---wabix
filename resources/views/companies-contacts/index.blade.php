@@ -104,8 +104,8 @@
                 order: [],
                 ajax: "{{ route('companies-contacts.index') }}",
                 lengthMenu: [
-                    [100, 250, 500],
-                    [100, 250, 500]
+                    [10, 250, 500],
+                    [10, 250, 500]
                 ],
                 columns: columns,
                 initComplete: function () {

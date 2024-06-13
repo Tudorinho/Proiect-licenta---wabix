@@ -90,8 +90,8 @@
                 order: [],
                 ajax: "{{ route('companies.index') }}",
                 lengthMenu: [
-                    [100, 250, 500],
-                    [100, 250, 500]
+                    [10, 100, 500],
+                    [10, 100, 500]
                 ],
                 columns: columns,
                 initComplete: function () {

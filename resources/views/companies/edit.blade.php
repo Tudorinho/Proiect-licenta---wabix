@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    @lang('translation.company.addCompany')
+    @lang('translation.company.editCompany')
 @endsection
 
 @section('css')
@@ -13,7 +13,7 @@
             <a href="{{ route('companies.index') }}">@lang('translation.company.companies')</a>
         @endslot
         @slot('title')
-            @lang('translation.company.addCompany')
+            @lang('translation.company.editCompany')
         @endslot
     @endcomponent
     <div class="row">
