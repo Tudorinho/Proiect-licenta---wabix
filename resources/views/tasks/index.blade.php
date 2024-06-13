@@ -54,8 +54,8 @@
                 serverSide: true,
                 ajax: "{{ route('tasks.index') }}",
                 lengthMenu: [
-                    [100, 250, 500],
-                    [100, 250, 500]
+                    [10, 100, 500],
+                    [10, 100, 500]
                 ],
                 columns: [
 					{
