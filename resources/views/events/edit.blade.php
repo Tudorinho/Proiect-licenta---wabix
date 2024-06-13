@@ -13,7 +13,7 @@
             <a href="{{ route('events.index') }}">@lang('translation.event.events')</a>
         @endslot
         @slot('title')
-            @lang('translation.event.addEvent')
+            @lang('translation.event.editEvent')
         @endslot
     @endcomponent
     <div class="row">
