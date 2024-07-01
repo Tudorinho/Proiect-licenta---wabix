@@ -85,6 +85,8 @@ class WorklogController extends Controller
         $ongoingStatus = ProjectStatus::where([
             'is_ongoing' => 1
         ])->first();
+        // dd($ongoingStatus);
+
 		$projects = Project::where(['project_status_id' => $ongoingStatus->id])->get();
         $today = new Carbon();
         $today = $today->format('Y-m-d');
